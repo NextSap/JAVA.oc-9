@@ -2,17 +2,11 @@ spring:
   application:
     name: medilabo-gateway
   cloud:
-    gateway:
-      routes:
-        - id: medilabo-patient
-          uri: lb://medilabo-patient
-          predicates:
-            - Path=/patient/**
     config:
       import-check:
         enabled: false
 server:
-  port: 9004
+  port: 9005
 eureka:
   client:
     service-url:

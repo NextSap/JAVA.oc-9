@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/medilabo-patient/patient")
 public class PatientController {
 
     private final PatientService patientService;
