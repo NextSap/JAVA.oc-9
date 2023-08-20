@@ -25,6 +25,9 @@ public class GatewayConfig {
                         .uri("lb://medilabo-patient"))
                 .route("medilabo-auth", r -> r.path("/medilabo-auth/**")
                         .uri("lb://medilabo-auth"))
+                .route("medilabo-notes", r -> r.path("/medilabo-notes/**")
+                        .filters(f -> f.filter(authenticationFilter))
+                        .uri("lb://medilabo-notes"))
                 .build();
     }
 }

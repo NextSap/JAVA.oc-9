@@ -24,8 +24,8 @@ public class AuthController {
         return ResponseEntity.status(201).body(authResponse);
     }
 
-    @GetMapping("/validate")
-    public ResponseEntity<?> validate(@RequestParam String token) {
+    @GetMapping("/validate/{token}")
+    public ResponseEntity<?> validate(@PathVariable String token) {
         boolean isValidated = authService.validate(token);
         return ResponseEntity.status(200).body(isValidated);
     }

@@ -1,6 +1,5 @@
 package com.medilabo.gateway.filter;
 
-import com.medilabo.gateway.validator.RouteValidator;
 import org.apache.http.HttpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -18,22 +17,16 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthenticationFilter implements GatewayFilter {
 
-    private final RouteValidator routerValidator;
     private final WebClient.Builder webClientBuilder;
 
     @Autowired
-    public AuthenticationFilter(RouteValidator routerValidator, WebClient.Builder webClientBuilder) {
-        this.routerValidator = routerValidator;
+    public AuthenticationFilter(WebClient.Builder webClientBuilder) {
         this.webClientBuilder = webClientBuilder;
     }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
-
-        if (!routerValidator.isSecured.test(request)) {
-            return chain.filter(exchange);
-        }
 
         if (this.isAuthMissing(request))
             return this.onError(exchange, "Authorization header is missing in request", HttpStatus.UNAUTHORIZED);
@@ -59,7 +52,7 @@ public class AuthenticationFilter implements GatewayFilter {
     }
 
     private Mono<Boolean> isValidated(String token) {
-        return webClientBuilder.build().get().uri("http://localhost:9005/medilabo-auth/auth/validate?token=" + token)
+        return webClientBuilder.build().get().uri("http://localhost:9005/medilabo-auth/auth/validate/" + token)
                 .retrieve().bodyToMono(Boolean.class);
     }
 }
