@@ -1,6 +1,6 @@
 package com.medilabo.auth.service;
 
-import com.medilabo.auth.object.entity.User;
+import com.medilabo.auth.model.entity.User;
 
 public interface UserService {
     User findByEmail(String email);

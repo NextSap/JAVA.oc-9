@@ -1,8 +1,8 @@
 package com.medilabo.notes.controller;
 
-import com.medilabo.notes.object.request.NoteRequest;
-import com.medilabo.notes.object.response.NoteResponse;
-import com.medilabo.notes.object.response.NotebookResponse;
+import com.medilabo.notes.model.request.NoteRequest;
+import com.medilabo.notes.model.response.NoteResponse;
+import com.medilabo.notes.model.response.NotebookResponse;
 import com.medilabo.notes.service.NoteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

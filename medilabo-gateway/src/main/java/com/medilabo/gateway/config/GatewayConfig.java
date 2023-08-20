@@ -28,6 +28,9 @@ public class GatewayConfig {
                 .route("medilabo-notes", r -> r.path("/medilabo-notes/**")
                         .filters(f -> f.filter(authenticationFilter))
                         .uri("lb://medilabo-notes"))
+                .route("medilabo-diabetes", r -> r.path("/medilabo-diabetes/**")
+                        .filters(f -> f.filter(authenticationFilter))
+                        .uri("lb://medilabo-diabetes"))
                 .build();
     }
 }

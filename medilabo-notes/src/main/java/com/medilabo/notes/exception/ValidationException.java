@@ -1,6 +1,6 @@
 package com.medilabo.notes.exception;
 
-import com.medilabo.notes.object.response.ErrorResponse;
+import com.medilabo.notes.model.response.ErrorResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.medilabo.auth.repository;
 
-import com.medilabo.auth.object.entity.User;
+import com.medilabo.auth.model.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

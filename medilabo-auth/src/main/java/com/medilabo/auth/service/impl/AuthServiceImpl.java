@@ -1,9 +1,9 @@
 package com.medilabo.auth.service.impl;
 
 import com.medilabo.auth.exception.AuthException;
-import com.medilabo.auth.object.entity.User;
-import com.medilabo.auth.object.request.AuthRequest;
-import com.medilabo.auth.object.response.AuthResponse;
+import com.medilabo.auth.model.entity.User;
+import com.medilabo.auth.model.request.AuthRequest;
+import com.medilabo.auth.model.response.AuthResponse;
 import com.medilabo.auth.repository.UserRepository;
 import com.medilabo.auth.service.AuthService;
 import com.medilabo.auth.util.JwtUtil;

@@ -1,7 +1,7 @@
 package com.medilabo.auth.controller;
 
-import com.medilabo.auth.object.request.AuthRequest;
-import com.medilabo.auth.object.response.AuthResponse;
+import com.medilabo.auth.model.request.AuthRequest;
+import com.medilabo.auth.model.response.AuthResponse;
 import com.medilabo.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

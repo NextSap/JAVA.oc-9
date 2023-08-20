@@ -1,7 +1,7 @@
 package com.medilabo.auth.service;
 
-import com.medilabo.auth.object.request.AuthRequest;
-import com.medilabo.auth.object.response.AuthResponse;
+import com.medilabo.auth.model.request.AuthRequest;
+import com.medilabo.auth.model.response.AuthResponse;
 
 public interface AuthService {
 

@@ -1,6 +1,6 @@
 package com.medilabo.auth.exception;
 
-import com.medilabo.auth.object.response.ErrorResponse;
+import com.medilabo.auth.model.response.ErrorResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
