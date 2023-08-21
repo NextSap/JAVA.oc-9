@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/medilabo-notes/notes")
+@RequestMapping("/medilabo-notes/")
 public class NoteController {
 
     private final NoteService noteService;
@@ -20,15 +20,21 @@ public class NoteController {
         this.noteService = noteService;
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/notes/{userId}")
     public ResponseEntity<?> getNotebookByUserId(@PathVariable String userId) {
         NotebookResponse notebookResponse = noteService.getNotebook(userId);
         return ResponseEntity.ok(notebookResponse);
     }
 
-    @PostMapping("/{userId}")
+    @PostMapping("/notes/{userId}")
     public ResponseEntity<?> createNoteByUserId(@PathVariable String userId, @Valid @RequestBody NoteRequest noteRequest) {
         NoteResponse noteResponse = noteService.createNote(userId, noteRequest);
         return ResponseEntity.status(201).body(noteResponse);
+    }
+
+    @PostMapping("/notebook/{userId}")
+    public ResponseEntity<?> createNotebook(@PathVariable String userId) {
+        NotebookResponse notebookResponse = noteService.createNotebook(userId);
+        return ResponseEntity.status(201).body(notebookResponse);
     }
 }

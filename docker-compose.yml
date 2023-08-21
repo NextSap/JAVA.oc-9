@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  medilabo-database:
+    CONFIGURER
+  medilabo-auth:
+    build: ./medilabo-auth
+    depends_on:
+      - medilabo-gateway
+  medilabo-discovery:
+    build: ./medilabo-discovery
+    depends_on:
+      - db
+  medilabo-gateway:
+    build: ./medilabo-gateway
+    depends_on:
+      - medilabo-discovery
+  medilabo-patient:
+    build: ./medilabo-patient
+    depends_on:
+      - medilabo-gateway
+  medilabo-diabetes:
+    build: ./medilabo-diabetes
+    depends_on:
+      - medilabo-gateway
+  medilabo-notes:
+    build: ./medilabo-notes
+    depends_on:
+      - medilabo-gateway
+  medilabo-frontend:
+    build: ./medilabo-frontend
+    depends_on:
+      - medilabo-gateway

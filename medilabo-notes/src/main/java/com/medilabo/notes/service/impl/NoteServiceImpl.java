@@ -58,18 +58,21 @@ public class NoteServiceImpl implements NoteService {
         Optional<Notebook> notebook = noteRepository.findById(userId);
         Note note = noteMapper.toNote(noteRequest, isTrigger(noteRequest));
 
-        if (notebook.isPresent()) {
-            notebook.get().add(note);
-            noteRepository.save(notebook.get());
-            return noteMapper.toNoteResponse(note);
-        }
+        if (notebook.isEmpty())
+            throw new NotebookException.NotebookNotFoundException("Notebook of user `" + userId + "` not found");
 
+        notebook.get().add(note);
+        noteRepository.save(notebook.get());
+        return noteMapper.toNoteResponse(note);
+    }
+
+    @Override
+    public NotebookResponse createNotebook(String userId) {
         Notebook newNoteBook = new Notebook();
         newNoteBook.setUserId(userId);
         newNoteBook.setNotes(new ArrayList<>());
-        newNoteBook.add(note);
-        noteRepository.save(newNoteBook);
-        return noteMapper.toNoteResponse(note);
+
+        return noteMapper.toNotebookResponse(noteRepository.save(newNoteBook));
     }
 
     public boolean isTrigger(NoteRequest noteRequest) {

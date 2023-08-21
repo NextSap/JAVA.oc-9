@@ -9,4 +9,6 @@ public interface NoteService {
     NotebookResponse getNotebook(String userId);
 
     NoteResponse createNote(String userId, NoteRequest noteRequest);
+
+    NotebookResponse createNotebook(String userId);
 }
