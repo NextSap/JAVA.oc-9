@@ -7,7 +7,9 @@ export const NoteResponseSchema = z.object({
     trigger: z.boolean()
 })
 
-export const NotebookResponseSchema = z.array(NoteResponseSchema)
+export const NotebookResponseSchema = z.object({
+    notes: z.array(NoteResponseSchema)
+});
 
 export type NoteResponseSchemaType = z.infer<typeof NoteResponseSchema>
 export type NotebookResponseSchemaType = z.infer<typeof NotebookResponseSchema>

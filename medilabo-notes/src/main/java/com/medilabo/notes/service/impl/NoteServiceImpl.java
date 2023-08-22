@@ -45,12 +45,16 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public NotebookResponse getNotebook(String userId) {
-        Optional<Notebook> notebook = noteRepository.findById(userId);
+        Optional<Notebook> optionalNotebook = noteRepository.findById(userId);
 
-        if (notebook.isEmpty())
+        if (optionalNotebook.isEmpty())
             throw new NotebookException.NotebookNotFoundException("Notebook of user `" + userId + "` not found");
 
-        return noteMapper.toNotebookResponse(notebook.get());
+        Notebook notebook = optionalNotebook.get();
+
+        sortNotes(notebook);
+
+        return noteMapper.toNotebookResponse(notebook);
     }
 
     @Override
@@ -76,6 +80,10 @@ public class NoteServiceImpl implements NoteService {
     }
 
     public boolean isTrigger(NoteRequest noteRequest) {
-        return triggerTerms.stream().anyMatch(term -> noteRequest.getContent().contains(term));
+        return triggerTerms.stream().anyMatch(term -> noteRequest.getContent().toLowerCase().contentEquals(term.toLowerCase()));
+    }
+
+    public void sortNotes(Notebook notebook) {
+        notebook.getNotes().sort((note1, note2) -> note2.getCreatedAt().compareTo(note1.getCreatedAt()));
     }
 }

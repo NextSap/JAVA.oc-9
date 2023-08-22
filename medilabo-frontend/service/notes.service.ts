@@ -1,5 +1,4 @@
 import {base_url} from "@/config/service.config";
-import ky from "ky";
 import {NoteRequestSchemaType} from "@/model/request/note.request";
 import {NotebookResponseSchema, NoteResponseSchema} from "@/model/response/note.response";
 import {api} from "@/config/ky.config";

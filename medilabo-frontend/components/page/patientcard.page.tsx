@@ -1,9 +1,9 @@
 import React from 'react';
-import {Patient} from "@/model/response/patient.response";
 import {useRouter} from "next/router";
+import {PatientResponseSchemaType} from "@/model/response/patient.response";
 
 type PatientCardProps = {
-    patient: any;
+    patient: PatientResponseSchemaType;
 }
 
 const PatientCard = (props: PatientCardProps) => {
