@@ -1,7 +1,7 @@
 import {z} from 'zod'
 
 export const PatientResponseSchema = z.object({
-    id: z.string(),
+    id: z.number(),
     firstName: z.string(),
     lastName: z.string(),
     birthdate: z.string(),

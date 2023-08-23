@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class PatientMapper {
 
-    public Patient toPatient(String id, PatientRequest patientRequest) {
+    public Patient toPatient(Long id, PatientRequest patientRequest) {
         Patient patient = toPatient(patientRequest);
         patient.setId(id);
         return patient;

@@ -28,7 +28,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient findById(String id) {
+    public Patient findById(Long id) {
         return patientRepository.findById(id).orElseThrow(() -> new PatientException.PatientNotFoundException("Patient with id `" + id + "` not found"));
     }
 
@@ -39,14 +39,14 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient update(String id, PatientRequest patientRequest) {
+    public Patient update(Long id, PatientRequest patientRequest) {
         patientRepository.findById(id).orElseThrow(() -> new PatientException.PatientNotFoundException("Patient with id `" + id + "` not found"));
         Patient patient = patientMapper.toPatient(id, patientRequest);
         return patientRepository.save(patient);
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
         patientRepository.deleteById(id);
     }
 }

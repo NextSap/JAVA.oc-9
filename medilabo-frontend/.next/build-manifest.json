@@ -37,10 +37,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/create/note/[id].js"
     ],
-    "/login": [
+    "/create/patient": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/login.js"
+      "static/chunks/pages/create/patient.js"
+    ],
+    "/edit/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/edit/[id].js"
     ]
   },
   "ampFirstPages": []

@@ -56,7 +56,7 @@ public class JacksonConfig implements ApplicationRunner {
             if (patientRepository.findByFirstNameAndLastName(patientModel.getFirstName(), patientModel.getLastName()).size() > 0)
                 continue;
             Patient patient = new Patient();
-            patient.setId(String.valueOf(i + 1));
+            patient.setId((long) (i + 1));
             patient.setFirstName(patientModel.getFirstName());
             patient.setLastName(patientModel.getLastName());
             patient.setBirthdate(patientModel.getBirthdate());

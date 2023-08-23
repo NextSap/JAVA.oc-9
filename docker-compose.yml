@@ -44,7 +44,7 @@ services:
     restart: on-failure
     environment:
       - EUREKA_HOST=medilabo-discovery
-      - MONGO_HOST=medilabo-database
+      - MONGO_HOST=medilabo-mongo
       - JWT_SECRET=secret
     depends_on:
       - medilabo-gateway
@@ -55,10 +55,11 @@ services:
     restart: on-failure
     environment:
       - EUREKA_HOST=medilabo-discovery
-      - MONGO_HOST=medilabo-database
+      - MONGO_HOST=medilabo-mongo
       - FEED_DATABASE=true
       - MYSQL_HOST=medilabo-mysql
       - MYSQL_PORT=3306
+      - MYSQL_PASSWORD=root
     depends_on:
       - medilabo-gateway
     container_name: medilabo-patient
@@ -78,7 +79,7 @@ services:
     restart: on-failure
     environment:
       - EUREKA_HOST=medilabo-discovery
-      - MONGO_HOST=medilabo-database
+      - MONGO_HOST=medilabo-mongo
     depends_on:
       - medilabo-gateway
     container_name: medilabo-notes
