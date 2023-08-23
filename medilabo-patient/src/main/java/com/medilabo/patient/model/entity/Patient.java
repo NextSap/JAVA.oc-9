@@ -1,20 +1,19 @@
 package com.medilabo.patient.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import java.util.Date;
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "patient")
+@Entity
 public class Patient {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String firstName;
     private String lastName;

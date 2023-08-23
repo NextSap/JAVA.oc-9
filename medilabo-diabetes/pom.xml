@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.medilabo</groupId>
 	<artifactId>diabetes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>medilabo-diabetes</name>
 	<description>medilabo-diabetes</description>
 	<properties>

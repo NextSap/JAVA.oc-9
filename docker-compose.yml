@@ -1,32 +1,84 @@
 version: "3.7"
 services:
-  medilabo-database:
-    CONFIGURER
-  medilabo-auth:
-    build: ./medilabo-auth
-    depends_on:
-      - medilabo-gateway
+  medilabo-mongo:
+    image: mongo:latest
+    restart: on-failure
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootroot
+      MONGO_INITDB_DATABASE: medilabo
+    container_name: medilabo-mongo
+
+  medilabo-mysql:
+    image: "mysql:latest"
+    restart: on-failure
+    environment:
+      MYSQL_DATABASE: medilabo
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+    container_name: medilabo-mysql
+
   medilabo-discovery:
     build: ./medilabo-discovery
+    restart: on-failure
     depends_on:
-      - db
+      - medilabo-mongo
+      - medilabo-mysql
+    container_name: medilabo-discovery
+
+
   medilabo-gateway:
     build: ./medilabo-gateway
+    restart: on-failure
+    environment:
+      - EUREKA_HOST=medilabo-discovery
+    ports:
+      - "9005:9005"
     depends_on:
       - medilabo-discovery
+    container_name: medilabo-gateway
+
+  medilabo-auth:
+    build: ./medilabo-auth
+    restart: on-failure
+    environment:
+      - EUREKA_HOST=medilabo-discovery
+      - MONGO_HOST=medilabo-database
+      - JWT_SECRET=secret
+    depends_on:
+      - medilabo-gateway
+    container_name: medilabo-auth
+
   medilabo-patient:
     build: ./medilabo-patient
+    restart: on-failure
+    environment:
+      - EUREKA_HOST=medilabo-discovery
+      - MONGO_HOST=medilabo-database
+      - FEED_DATABASE=true
+      - MYSQL_HOST=medilabo-mysql
+      - MYSQL_PORT=3306
     depends_on:
       - medilabo-gateway
+    container_name: medilabo-patient
+
   medilabo-diabetes:
     build: ./medilabo-diabetes
+    restart: on-failure
+    environment:
+      - EUREKA_HOST=medilabo-discovery
+      - GATEWAY_HOST=medilabo-gateway
     depends_on:
       - medilabo-gateway
+    container_name: medilabo-diabetes
+
   medilabo-notes:
     build: ./medilabo-notes
+    restart: on-failure
+    environment:
+      - EUREKA_HOST=medilabo-discovery
+      - MONGO_HOST=medilabo-database
     depends_on:
       - medilabo-gateway
-  medilabo-frontend:
-    build: ./medilabo-frontend
-    depends_on:
-      - medilabo-gateway
+    container_name: medilabo-notes

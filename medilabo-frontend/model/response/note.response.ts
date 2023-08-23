@@ -4,7 +4,7 @@ export const NoteResponseSchema = z.object({
     title: z.string(),
     content: z.string(),
     createdAt: z.string(),
-    trigger: z.boolean()
+    trigger: z.number()
 })
 
 export const NotebookResponseSchema = z.object({

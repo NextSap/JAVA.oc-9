@@ -1,0 +1,17 @@
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/config/JacksonConfig.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/MedilaboAuthApplication.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/model/response/AuthResponse.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/model/entity/User.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/controller/UserController.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/exception/ValidationException.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/repository/UserRepository.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/controller/AuthController.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/model/response/ErrorResponse.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/service/UserService.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/exception/AuthException.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/config/EncoderBean.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/service/impl/AuthServiceImpl.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/util/JwtUtil.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/model/request/AuthRequest.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/service/AuthService.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-auth/src/main/java/com/medilabo/auth/service/impl/UserServiceImpl.java

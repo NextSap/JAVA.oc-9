@@ -17,8 +17,8 @@ public class PatientMapper {
 
         patient.setAge(Years.yearsBetween(birthDate, now).getYears());
         patient.setGender(patientShared.getGender());
-        int trigger = notebookShared.getNotes().stream().filter(NoteShared::isTrigger).mapToInt(note -> 1).sum();
-        patient.setTrigger(trigger);
+        int triggers = notebookShared.getNotes().stream().mapToInt(NoteShared::getTrigger).sum();
+        patient.setTrigger(triggers);
 
         return patient;
     }

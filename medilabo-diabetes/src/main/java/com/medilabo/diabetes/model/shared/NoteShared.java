@@ -13,5 +13,5 @@ public class NoteShared {
     private String title;
     private String content;
     private String createdAt;
-    private boolean trigger;
+    private int trigger;
 }

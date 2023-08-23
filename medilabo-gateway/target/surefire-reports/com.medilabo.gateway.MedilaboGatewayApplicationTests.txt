@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.medilabo.gateway.MedilaboGatewayApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.142 s - in com.medilabo.gateway.MedilaboGatewayApplicationTests

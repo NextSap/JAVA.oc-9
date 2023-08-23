@@ -44,17 +44,19 @@ public class JacksonConfig implements ApplicationRunner {
 
         List<Patient> patients = map(model);
 
-        patientRepository.insert(patients);
+        patientRepository.saveAll(patients);
 
         System.out.println("Data loaded.");
     }
 
     private List<Patient> map(Model model) {
         List<Patient> patients = new ArrayList<>();
-        for (PatientModel patientModel : model.patients) {
+        for (int i = 0; i < model.patients.length; i++) {
+            PatientModel patientModel = model.patients[i];
             if (patientRepository.findByFirstNameAndLastName(patientModel.getFirstName(), patientModel.getLastName()).size() > 0)
                 continue;
             Patient patient = new Patient();
+            patient.setId(String.valueOf(i + 1));
             patient.setFirstName(patientModel.getFirstName());
             patient.setLastName(patientModel.getLastName());
             patient.setBirthdate(patientModel.getBirthdate());
@@ -63,6 +65,8 @@ public class JacksonConfig implements ApplicationRunner {
             patient.setPhoneNumber(patientModel.getPhoneNumber());
             patients.add(patient);
         }
+
+
         return patients;
     }
 

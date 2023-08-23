@@ -60,7 +60,7 @@ public class NoteServiceImpl implements NoteService {
     @Override
     public NoteResponse createNote(String userId, NoteRequest noteRequest) {
         Optional<Notebook> notebook = noteRepository.findById(userId);
-        Note note = noteMapper.toNote(noteRequest, isTrigger(noteRequest));
+        Note note = noteMapper.toNote(noteRequest, getTriggers(noteRequest));
 
         if (notebook.isEmpty())
             throw new NotebookException.NotebookNotFoundException("Notebook of user `" + userId + "` not found");
@@ -79,8 +79,15 @@ public class NoteServiceImpl implements NoteService {
         return noteMapper.toNotebookResponse(noteRepository.save(newNoteBook));
     }
 
-    public boolean isTrigger(NoteRequest noteRequest) {
-        return triggerTerms.stream().anyMatch(term -> noteRequest.getContent().toLowerCase().contentEquals(term.toLowerCase()));
+    public int getTriggers(NoteRequest noteRequest) {
+        int trigger = 0;
+
+        for (String term : triggerTerms) {
+            if (noteRequest.getContent().toLowerCase().contains(term.toLowerCase()))
+                trigger++;
+        }
+
+        return trigger;
     }
 
     public void sortNotes(Notebook notebook) {

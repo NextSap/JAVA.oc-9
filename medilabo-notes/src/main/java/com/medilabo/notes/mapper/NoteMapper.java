@@ -24,7 +24,7 @@ public class NoteMapper {
                 .title(note.getTitle())
                 .content(note.getContent())
                 .createdAt(note.getCreatedAt())
-                .trigger(note.isTrigger())
+                .trigger(note.getTrigger())
                 .build();
     }
 
@@ -34,12 +34,12 @@ public class NoteMapper {
                 .collect(Collectors.toList());
     }
 
-    public Note toNote(NoteRequest noteRequest, boolean isTrigger) {
+    public Note toNote(NoteRequest noteRequest, int triggers) {
         return Note.builder()
                 .title(noteRequest.getTitle())
                 .content(noteRequest.getContent())
                 .createdAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss")))
-                .trigger(isTrigger)
+                .trigger(triggers)
                 .build();
     }
 }

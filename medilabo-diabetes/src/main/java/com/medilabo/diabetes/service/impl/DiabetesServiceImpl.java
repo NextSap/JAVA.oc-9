@@ -9,6 +9,7 @@ import com.medilabo.diabetes.model.shared.PatientShared;
 import com.medilabo.diabetes.service.DiabetesService;
 import com.medilabo.diabetes.service.RiskCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -19,6 +20,9 @@ public class DiabetesServiceImpl implements DiabetesService {
 
     private final WebClient.Builder webClientBuilder;
     private final RiskCalculatorService riskCalculatorService;
+
+    @Value("${gateway}")
+    private String gateway;
 
     @Autowired
     public DiabetesServiceImpl(WebClient.Builder webClientBuilder, RiskCalculatorService riskCalculatorService) {
@@ -37,14 +41,21 @@ public class DiabetesServiceImpl implements DiabetesService {
     }
 
     public Patient fetchPatient(String patientId, String token) {
-        Optional<PatientShared> patientShared = webClientBuilder.build().get().uri("http://localhost:9005/medilabo-patient/patient/" + patientId)
+        Optional<PatientShared> patientShared = webClientBuilder.build().get().uri(gateway + "medilabo-patient/patient/" + patientId)
                 .header("Authorization", token).retrieve().bodyToMono(PatientShared.class).blockOptional();
 
-        Optional<NotebookShared> notebookShared = webClientBuilder.build().get().uri("http://localhost:9005/medilabo-notes/notes/" + patientId)
+        Optional<NotebookShared> notebookShared = webClientBuilder.build().get().uri(gateway + "medilabo-notes/notes/" + patientId)
                 .header("Authorization", token).retrieve().bodyToMono(NotebookShared.class).blockOptional();
 
-        if (patientShared.isEmpty() || notebookShared.isEmpty())
-            throw new MicroserviceException.FetchingException("Error fetching patient or notebook");
+        if (patientShared.isEmpty())
+            throw new MicroserviceException.FetchingException("Error fetching patient");
+
+        if (notebookShared.isEmpty())
+            notebookShared = webClientBuilder.build().post().uri(gateway + "medilabo-notes/notebook/" + patientId)
+                    .header("Authorization", token).retrieve().bodyToMono(NotebookShared.class).blockOptional();
+
+        if (notebookShared.isEmpty())
+            throw new MicroserviceException.FetchingException("Error fetching notebook");
 
         return new PatientMapper().toPatient(patientShared.get(), notebookShared.get());
     }

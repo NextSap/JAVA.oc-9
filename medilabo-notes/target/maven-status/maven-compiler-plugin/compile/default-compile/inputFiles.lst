@@ -1,0 +1,16 @@
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/service/NoteService.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/service/impl/NoteServiceImpl.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/response/NoteResponse.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/config/CorsConfig.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/mapper/NoteMapper.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/exception/ValidationException.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/config/JacksonConfig.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/entity/Notebook.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/response/NotebookResponse.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/MedilaboNotesApplication.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/repository/NoteRepository.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/entity/Note.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/response/ErrorResponse.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/controller/NoteController.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/model/request/NoteRequest.java
+/Users/louisdiilio/IdeaProjects/@ Openclassrooms/JAVA.oc-9/medilabo-notes/src/main/java/com/medilabo/notes/exception/NotebookException.java

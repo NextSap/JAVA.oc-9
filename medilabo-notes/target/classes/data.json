@@ -1,0 +1,49 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "title": "Note 1",
+      "content": "Le patient déclare qu'il 'se sent très bien' Poids égal ou inférieur au poids recommandé"
+    },
+    {
+      "id": "2",
+      "title": "Note 1",
+      "content": "Le patient déclare qu'il ressent beaucoup de stress au travail Il se plaint également que son audition est anormale dernièrement"
+    },
+    {
+      "id": "2",
+      "title": "Note 2",
+      "content": "Le patient déclare avoir fait une réaction aux médicaments au cours des 3 derniers mois Il remarque également que son audition continue d'être anormale"
+    },
+    {
+      "id": "3",
+      "title": "Note 1",
+      "content": "Le patient déclare qu'il fume depuis peu"
+    },
+    {
+      "id": "3",
+      "title": "Note 2",
+      "content": "Le patient déclare qu'il est fumeur et qu'il a cessé de fumer l'année dernière Il se plaint également de crises d’apnée respiratoire anormales Tests de laboratoire indiquant un taux de cholestérol LDL élevé"
+    },
+    {
+      "id": "4",
+      "title": "Note 1",
+      "content": "Le patient déclare qu'il lui est devenu difficile de monter les escaliers Il se plaint également d’être essoufflé Tests de laboratoire indiquant que les anticorps sont élevés Réaction aux médicaments"
+    },
+    {
+      "id": "4",
+      "title": "Note 2",
+      "content": "Le patient déclare qu'il a mal au dos lorsqu'il reste assis pendant longtemps"
+    },
+    {
+      "id": "4",
+      "title": "Note 3",
+      "content": "Le patient déclare avoir commencé à fumer depuis peu Hémoglobine A1C supérieure au niveau recommandé"
+    },
+    {
+      "id": "4",
+      "title": "Note 4",
+      "content": "Taille, Poids, Cholestérol, Vertige et Réaction"
+    }
+  ]
+}
