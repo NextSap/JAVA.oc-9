@@ -24,3 +24,8 @@ cd medilabo-frontend
 npm install
 npm run dev
 ```
+
+### Credentials
+* Compte praticien : 
+  * Email : `test@test.com`
+  * Mot de passe : `test`
