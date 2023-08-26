@@ -29,8 +29,13 @@ public class JacksonConfig implements ApplicationRunner {
     @Value("classpath:data.json")
     private Resource data;
 
+    @Value("${feedDatabase}")
+    private boolean feedDatabase;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        if (!feedDatabase) return;
+
         System.out.println("Loading data...");
 
         Model model = objectMapper.readValue(data.getInputStream(), Model.class);
