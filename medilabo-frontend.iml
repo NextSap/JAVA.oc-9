@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/medilabo-frontend" />
+    <content url="file://$MODULE_DIR$/medilabo-frontend/.next" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
