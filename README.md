@@ -29,3 +29,10 @@ npm run dev
 * Compte praticien : 
   * Email : `test@test.com`
   * Mot de passe : `test`
+
+
+## Pratiques Green Code
+
+* Suppression du code inutile et non-utilisé pour gagner en stockage
+* Utilisation des formes normales pour éviter la redondance des données
+* Utilisation de technologies récentes pour éviter la surconsommation de ressources
