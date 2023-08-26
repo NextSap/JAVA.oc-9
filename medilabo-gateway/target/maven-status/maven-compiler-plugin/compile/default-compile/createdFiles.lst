@@ -1,5 +1,0 @@
-com/medilabo/gateway/config/GatewayConfig.class
-com/medilabo/gateway/config/CorsConfig.class
-com/medilabo/gateway/MedilaboGatewayApplication.class
-com/medilabo/gateway/filter/AuthenticationFilter.class
-com/medilabo/gateway/config/RestClientBean.class
